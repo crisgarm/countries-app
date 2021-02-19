@@ -5,35 +5,86 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   background-color: rgb(240, 195, 190);
 }
 
 .header__title {
   margin-bottom: 10px;
+  font-size: 35px;
 }
 
 .header__list {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .header__list-item {
-  margin-right: 20px;
   padding: 8px;
-  background-color: rgb(49, 143, 138);
+  background-color: rgb(11, 228, 156);
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .active {
-  background-color: purple;
+  background-color: rgb(7, 145, 99);
+}
+
+.main {
+  height: 100%;
+  background-color: rgb(226, 224, 224);
+}
+
+.main__wrapper {
+  text-align: center;
+}
+
+.main__title {
+  padding: 10px;
+  font-size: 22px;
+}
+
+.form__input {
+  padding: 5px;
+  width: 70%;
+}
+
+.form__text {
+  margin: 5px 0 20px;
+}
+
+table {
+  width: 90%;
+  text-align: left;
+  border-collapse: collapse;
+  margin: auto;
+  caption-side: top;
+  font-size: 14px;
+}
+
+caption,
+td,
+th {
+  padding: 0.3em;
+}
+tbody {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+}
+
+tbody:hover {
+  background-color: rgb(207, 203, 203);
 }
