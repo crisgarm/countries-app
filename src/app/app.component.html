@@ -1,32 +1,5 @@
 <header class="header">
-  <h1 class="header__title">Searches</h1>
-  <nav>
-    <ul class="header__list">
-      <li
-        routerLink=""
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        class="header__list-item"
-      >
-        <!-- Tenemos que poner el routerLinkActiveOptions porque la ruta está vacía -->
-        By Country
-      </li>
-      <li
-        routerLink="region"
-        routerLinkActive="active"
-        class="header__list-item"
-      >
-        By Region
-      </li>
-      <li
-        routerLink="capital"
-        routerLinkActive="active"
-        class="header__list-item"
-      >
-        By Capital
-      </li>
-    </ul>
-  </nav>
+  <app-header></app-header>
 </header>
 <main class="main">
   <router-outlet></router-outlet>
