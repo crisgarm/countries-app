@@ -32,3 +32,7 @@
   background-color: rgb(49, 143, 138);
   border-radius: 4px;
 }
+
+.active {
+  background-color: purple;
+}
