@@ -9,10 +9,12 @@
       placeholder="Search country..."
     />
   </form>
-  <p class="form__text">Sorry, no matches found</p>
+  <p *ngIf="hasError" class="form__text">
+    Sorry, no matches found with {{ inputSearch }}
+  </p>
 </div>
 
-<table>
+<table *ngIf="!hasError">
   <thead>
     <tr>
       <th>#</th>

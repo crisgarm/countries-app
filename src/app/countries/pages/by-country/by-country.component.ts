@@ -8,13 +8,20 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByCountryComponent {
   inputSearch: string = '';
-
-  getInputSearch() {
-    console.log(this.inputSearch);
-    this.countryService.searchCountry(this.inputSearch).subscribe((resp) => {
-      console.log(resp);
-    });
-  }
+  hasError: boolean = false;
 
   constructor(private countryService: CountriesService) {}
+
+  getInputSearch() {
+    this.hasError = false;
+    console.log(this.inputSearch);
+    this.countryService.searchCountry(this.inputSearch).subscribe(
+      (resp) => {
+        console.log(resp);
+      },
+      (err) => {
+        this.hasError = true;
+      }
+    );
+  }
 }
