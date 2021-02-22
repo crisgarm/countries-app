@@ -1,6 +1,9 @@
 <div class="main__wrapper">
   <h2 class="main__title">Search by country</h2>
-  <app-country-input (onEnter)="getInputSearch($event)"></app-country-input>
+  <app-country-input
+    (onEnter)="getInputSearch($event)"
+    (onDebounce)="suggestions($event)"
+  ></app-country-input>
   <p *ngIf="hasError" class="form__text">
     Sorry, no matches found with {{ inputSearch }}
   </p>
