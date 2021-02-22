@@ -1,1 +1,13 @@
-<p>see-country works!</p>
+<div *ngIf="!country; else divCountry">Wait, please</div>
+
+<ng-template #divCountry>
+  <div>
+    <h3>Country:{{ country.name }}</h3>
+    <img class="small-flag" [src]="country.flag" />
+    <p>{{ country.demonym }}</p>
+    <p>{{ country.population | number }}</p>
+  </div>
+  <pre>
+    {{ country | json }}
+  </pre>
+</ng-template>

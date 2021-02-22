@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
+import { Country } from '../../interfaces/countries.interface';
 import { CountriesService } from '../../services/countries.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { CountriesService } from '../../services/countries.service';
   styleUrls: ['./see-country.component.css'],
 })
 export class SeeCountryComponent implements OnInit {
+  country!: Country;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private countryService: CountriesService
@@ -19,10 +22,11 @@ export class SeeCountryComponent implements OnInit {
     //SwitchMap es un operador de rxjs que nos permite recibir un observable(params) y regresar otro (params.id)
     this.activatedRoute.params
       .pipe(
-        switchMap((params) => this.countryService.getCountryByAlpha(params.id))
+        switchMap((params) => this.countryService.getCountryByAlpha(params.id)),
+        tap(console.log)
       )
       .subscribe((resp) => {
-        console.log(resp);
+        this.country = resp;
       });
   }
 }

@@ -1,1 +1,19 @@
-<p>by-region works!</p>
+<h2>
+  Search by region: <small>{{ activeRegion | titlecase }}</small>
+</h2>
+<p>Select the region</p>
+<button
+  *ngFor="let region of regions"
+  (click)="activateRegion(region)"
+  [class]="getCssClass(region)"
+>
+  {{ region | titlecase }}
+</button>
+
+<!-- Maneras de añadir clases de forma condicional 
+1- [class.btn-active]="region === activeRegion"
+2- [ngClass]="{
+  'btn-active': region === activeRegion,
+  'btn-nonactive': region !== activeRegion
+}" (en este caso JS está evaluando las dos condiciones)
+3- [class]="region === activeRegion ? 'btn-active' : 'btn-nonactive'" (evaluamos una condición)-->
