@@ -1,1 +1,11 @@
-<p>by-capital works!</p>
+<div class="main__wrapper">
+  <h2 class="main__title">Search by capital</h2>
+  <app-country-input
+    (onEnter)="getInputSearch($event)"
+    placeholder="Search capital..."
+  ></app-country-input>
+  <p *ngIf="hasError" class="form__text">
+    Sorry, no matches found with {{ inputSearch }}
+  </p>
+</div>
+<app-country-table [countries]="countries"></app-country-table>

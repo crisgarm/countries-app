@@ -3,6 +3,7 @@
   <app-country-input
     (onEnter)="getInputSearch($event)"
     (onDebounce)="suggestions($event)"
+    placeholder="Search country..."
   ></app-country-input>
   <p *ngIf="hasError" class="form__text">
     Sorry, no matches found with {{ inputSearch }}
