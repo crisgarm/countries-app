@@ -1,7 +1,7 @@
-<h2>
+<h2 class="main__title">
   Search by region: <small>{{ activeRegion | titlecase }}</small>
 </h2>
-<p>Select the region</p>
+<p class="text">Select the region</p>
 <button
   *ngFor="let region of regions"
   (click)="activateRegion(region)"

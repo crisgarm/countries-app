@@ -11,6 +11,7 @@ export class ByCountryComponent {
   inputSearch: string = '';
   hasError: boolean = false;
   countries: Country[] = [];
+  countriesSuggested: Country[] = [];
 
   constructor(private countryService: CountriesService) {}
 
@@ -28,10 +29,5 @@ export class ByCountryComponent {
         this.countries = [];
       }
     );
-  }
-
-  suggestions(inputSearch: string) {
-    this.hasError = false;
-    //Crear sugerencias
   }
 }
