@@ -1,40 +1,8 @@
 <div class="main__wrapper">
   <h2 class="main__title">Search by country</h2>
-  <form (ngSubmit)="getInputSearch()" class="form">
-    <input
-      class="form__input"
-      type="text"
-      name="search"
-      [(ngModel)]="inputSearch"
-      placeholder="Search country..."
-    />
-  </form>
+  <app-country-input (onEnter)="getInputSearch($event)"></app-country-input>
   <p *ngIf="hasError" class="form__text">
     Sorry, no matches found with {{ inputSearch }}
   </p>
 </div>
-
-<table *ngIf="countries.length > 0">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Flag</th>
-      <th>Name</th>
-      <th>Population</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let country of countries; let i = index">
-      <td>{{ i + 1 }}</td>
-      <td>
-        <img class="small-flag" [src]="country.flag" [alt]="country.name" />
-      </td>
-      <td>{{ country.name }}</td>
-      <td>{{ country.population | number }}</td>
-      <td>
-        <a [routerLink]="['/country', country.alpha2Code]">See...</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<app-country-table [countries]="countries"></app-country-table>
