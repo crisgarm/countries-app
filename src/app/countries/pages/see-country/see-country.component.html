@@ -1,10 +1,34 @@
 <div *ngIf="!country; else divCountry">Wait, please</div>
-
 <ng-template #divCountry>
-  <div>
-    <h3>Country:{{ country.name }}</h3>
-    <img class="small-flag" [src]="country.flag" />
-    <p>{{ country.demonym }}</p>
-    <p>{{ country.population | number }}</p>
+  <div class="country__wrapper">
+    <h3 class="country__title">{{ country.name }}</h3>
+    <img class="country__flag" [src]="country.flag" />
+    <div class="country__properties">
+      <p class="country__alpha">
+        <span>Alpha3 Code:</span> {{ country.alpha3Code }}
+      </p>
+      <p class="country__capital">
+        <span>Capital:</span> {{ country.capital }}
+      </p>
+      <p class="country__demonym">
+        <span>Demonym:</span> {{ country.demonym }}
+      </p>
+      <p class="country__region"><span>Region:</span> {{ country.region }}</p>
+      <p class="country__subregion">
+        <span>Subregion:</span> {{ country.subregion }}
+      </p>
+      <p class="country__population">
+        <span>Population:</span> {{ country.population | number }}
+      </p>
+      <p class="country__numCode">
+        <span>Numeric Code:</span> {{ country.numericCode }}
+      </p>
+      <span>Border with:</span>
+      <ul class="country__list">
+        <li class="country__list-item" *ngFor="let border of country.borders">
+          {{ border }}
+        </li>
+      </ul>
+    </div>
   </div>
 </ng-template>

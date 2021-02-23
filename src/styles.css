@@ -132,3 +132,41 @@ button:hover {
   background-color: #fea757;
   outline-color: #fea757;
 }
+
+.country__wrapper {
+  width: 85%;
+  margin: auto;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 8px 8px 8px 3px rgb(0 0 0 / 50%);
+}
+
+.country__title {
+  padding: 10px;
+}
+
+.country__flag {
+  width: 80%;
+}
+
+.country__properties {
+  width: 80%;
+  padding: 10px 0;
+}
+
+.country__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.country__list-item {
+  margin-right: 10px;
+}
+
+span {
+  font-weight: 600;
+}

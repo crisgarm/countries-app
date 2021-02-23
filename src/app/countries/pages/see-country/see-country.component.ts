@@ -10,6 +10,7 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class SeeCountryComponent implements OnInit {
   country!: Country;
+  border: string = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
