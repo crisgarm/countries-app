@@ -1,4 +1,4 @@
-<div *ngIf="!country; else divCountry">Wait, please</div>
+<div *ngIf="!country; else divCountry" class="spinner spinner-load"></div>
 <ng-template #divCountry>
   <div class="country__wrapper">
     <h3 class="country__title">{{ country.name }}</h3>
