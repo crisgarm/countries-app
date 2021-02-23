@@ -9,63 +9,77 @@
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  background-color: #f5f2eb;
 }
 
 .header {
   text-align: center;
-  background-color: rgb(240, 195, 190);
+  padding: 15px;
 }
 
 .header__title {
-  margin-bottom: 10px;
-  font-size: 35px;
+  margin-bottom: 18px;
+  font-size: 26px;
+  color: #0a2540;
 }
 
 .header__list {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .header__list-item {
   padding: 8px;
-  background-color: rgb(11, 228, 156);
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 300;
+  color: #0a2540;
+  background-color: #32e9c1;
+  margin: 0 6px;
 }
 
 .active {
-  background-color: rgb(7, 145, 99);
+  background-color: #7a73fe;
 }
 
 .main {
   height: 100%;
-  background-color: rgb(226, 224, 224);
+  margin-bottom: 20px;
+  color: #0a2540;
 }
 
 .main__wrapper {
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .main__title {
   padding: 10px;
-  font-size: 22px;
+  font-size: 20px;
+}
+
+.main__text-region {
+  padding-bottom: 8px;
 }
 
 .form__input {
   padding: 5px;
   width: 70%;
+  background-color: #f5f2eb;
+  border: none;
+  border-bottom: 2px solid #0a2540;
 }
 
 .form__text {
   margin: 5px 0 20px;
 }
 
-table {
+.table {
   width: 90%;
   text-align: left;
   border-collapse: collapse;
@@ -74,21 +88,47 @@ table {
   font-size: 14px;
 }
 
-caption,
+caption {
+  margin-bottom: 15px;
+}
+
 td,
 th {
-  padding: 0.3em;
+  padding: 0.2em;
 }
-tbody {
+.table__body {
   border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
   cursor: pointer;
 }
 
-tbody:hover {
-  background-color: rgb(207, 203, 203);
+.table__body-row:hover {
+  background-color: rgb(231, 222, 222);
 }
 
-.small-flag {
+.table__flag {
   width: 40px;
+}
+
+button {
+  color: #0a2540;
+}
+
+button:hover {
+  border: 2px solid #fea757;
+}
+
+.region__btn-nonactive {
+  margin-right: 8px;
+  padding: 4px;
+  border-radius: 2px;
+  border: 2px solid rgb(151, 151, 151);
+  outline-color: rgb(151, 151, 151);
+}
+
+.region__btn-active {
+  margin-right: 8px;
+  padding: 4px;
+  border-radius: 2px;
+  background-color: #fea757;
+  outline-color: #fea757;
 }

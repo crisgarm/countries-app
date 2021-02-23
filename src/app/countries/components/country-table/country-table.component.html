@@ -1,18 +1,29 @@
-<table *ngIf="countries.length > 0">
-  <thead>
+<table
+  summary="List of countries with flag, capital, country, population and a link to see more information about each country."
+  class="table"
+  *ngIf="countries.length > 0"
+>
+  <caption>
+    Table of countries with flag information, capital city, country, population
+    and a link to see more information.
+  </caption>
+  <thead class="table__head">
     <tr>
       <th>#</th>
       <th>Flag</th>
       <th>Name</th>
       <th>Population</th>
-      <th></th>
+      <th>More</th>
     </tr>
   </thead>
-  <tbody>
-    <tr *ngFor="let country of countries; let i = index">
+  <tbody class="table__body">
+    <tr
+      class="table__body-row"
+      *ngFor="let country of countries; let i = index"
+    >
       <td>{{ i + 1 }}</td>
       <td>
-        <img class="small-flag" [src]="country.flag" [alt]="country.name" />
+        <img class="table__flag" [src]="country.flag" [alt]="country.name" />
       </td>
       <td>{{ country.capital }}, {{ country.name }}</td>
       <td>{{ country.population | number }}</td>

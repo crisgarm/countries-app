@@ -5,7 +5,6 @@ import { CountriesService } from '../../services/countries.service';
 @Component({
   selector: 'app-by-region',
   templateUrl: './by-region.component.html',
-  styleUrls: ['./by-region.component.css'],
 })
 export class ByRegionComponent {
   regions: string[] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
@@ -15,7 +14,9 @@ export class ByRegionComponent {
   constructor(private countryService: CountriesService) {}
 
   getCssClass(region: string): string {
-    return region === this.activeRegion ? 'btn-active' : 'btn-nonactive';
+    return region === this.activeRegion
+      ? 'region__btn-active'
+      : 'region__btn-nonactive';
   }
 
   activateRegion(region: string) {

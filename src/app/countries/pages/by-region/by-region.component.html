@@ -1,14 +1,16 @@
-<h2 class="main__title">
-  Search by region: <small>{{ activeRegion | titlecase }}</small>
-</h2>
-<p class="text">Select the region</p>
-<button
-  *ngFor="let region of regions"
-  (click)="activateRegion(region)"
-  [class]="getCssClass(region)"
->
-  {{ region | titlecase }}
-</button>
+<div class="main__wrapper">
+  <h2 class="main__title">
+    Search by region: <small>{{ activeRegion | titlecase }}</small>
+  </h2>
+  <p class="main__text-region">Select the region</p>
+  <button
+    *ngFor="let region of regions"
+    (click)="activateRegion(region)"
+    [class]="getCssClass(region)"
+  >
+    {{ region | titlecase }}
+  </button>
+</div>
 <app-country-table [countries]="countries"></app-country-table>
 
 <!-- Maneras de añadir clases de forma condicional 
