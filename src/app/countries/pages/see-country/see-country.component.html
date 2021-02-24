@@ -23,7 +23,7 @@
       <p class="country__numCode">
         <span>Numeric Code:</span> {{ country.numericCode }}
       </p>
-      <span>Border with:</span>
+      <span *ngIf="country.borders.length !== 0">Border with:</span>
       <ul class="country__list">
         <li class="country__list-item" *ngFor="let border of country.borders">
           {{ border }}

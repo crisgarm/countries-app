@@ -4,8 +4,8 @@
   *ngIf="countries.length > 0"
 >
   <caption>
-    Table of countries with flag information, capital city, country, population
-    and a link to see more information.
+    Table of countries with flag, country name and capital city, population and
+    a link to further information.
   </caption>
   <thead class="table__head">
     <tr>
@@ -28,7 +28,9 @@
       <td>{{ country.capital }}, {{ country.name }}</td>
       <td>{{ country.population | number }}</td>
       <td>
-        <a [routerLink]="['/country', country.alpha2Code]">See...</a>
+        <a class="table__link" [routerLink]="['/country', country.alpha2Code]"
+          >More...</a
+        >
       </td>
     </tr>
   </tbody>
